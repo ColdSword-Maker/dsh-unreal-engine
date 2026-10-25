@@ -1,0 +1,44 @@
+{
+  "name": "@local/dsh-unreal-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Drive a running Unreal Engine 5.8 editor from DeepSeek Harness through the editor's built-in MCP server.",
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/**/*.js",
+    "locale/*.json",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "verify:ue": "node scripts/verify-ue.mjs"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "unreal-engine",
+    "mcp",
+    "ue5"
+  ],
+  "license": "MIT"
+}

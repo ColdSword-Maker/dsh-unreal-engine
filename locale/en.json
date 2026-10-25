@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Unreal Engine 5.8 Bridge",
+    "description": "Lists and calls the tools exposed by a running UE 5.8 editor's built-in MCP server, so the agent can inspect logs, actors, assets, and Blueprints without leaving the editor."
+  }
+}

@@ -1,0 +1,32 @@
+# DSH bundle patch: inserts one Host plugin row that talks to the UE 5.8 editor MCP endpoint.
+#
+# Every value under `config:` is optional; the plugin applies these defaults itself, so deleting a
+# line changes nothing except removing documentation. Override them from your profile's own
+# cordis.patch.yml with an id-targeted entry:
+#
+#   - id: ue5
+#     name: "@local/dsh-unreal-engine"
+#     config:
+#       endpoint: http://127.0.0.1:8765/mcp
+#
+- insert:
+    - id: ue5
+      name: '@local/dsh-unreal-engine'
+      config:
+        # Full URL override. When set, no discovery runs and no other port is probed.
+        # endpoint: http://127.0.0.1:8765/mcp
+        # Project directories or .uproject files to inspect for the MCP ini and editor log.
+        # Empty = scan the workspace, its parent, and Documents for *.uproject (depth 3).
+        projectPaths: []
+        # Extra ports probed after the discovered ones (the engine default 8000 is always probed).
+        ports: []
+        # Per-request timeout. The engine answers ordinary tool calls with one JSON body, so a
+        # long value only matters for genuinely slow editor work.
+        requestTimeoutMs: 15000
+        # Cap on raw editor text from ue_call and raw fallbacks. Toolset schemas are paged
+        # (offset/limit) and readable per tool (tool_name), so this never hides a schema.
+        maxResultChars: 8000
+        # Mirror non-meta editor tools as ue_tool_<name> after ue_list_tools. With UE 5.8's default
+        # tool-search mode nothing is mirrored; ue_call always remains available either way.
+        mirrorTools: true
+        mirrorLimit: 32

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Unreal Engine MCP bridge">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0f172a"/>
+  <!-- Editor side: a viewport frame with a play glyph -->
+  <rect x="8" y="14" width="26" height="20" rx="3" fill="none" stroke="#7dd3fc" stroke-width="2.5"/>
+  <path d="M17 21 L25 24 L17 27 Z" fill="#7dd3fc"/>
+  <!-- Harness side: a chat node -->
+  <rect x="36" y="34" width="20" height="16" rx="5" fill="none" stroke="#a7f3d0" stroke-width="2.5"/>
+  <circle cx="42" cy="42" r="1.8" fill="#a7f3d0"/>
+  <circle cx="46" cy="42" r="1.8" fill="#a7f3d0"/>
+  <circle cx="50" cy="42" r="1.8" fill="#a7f3d0"/>
+  <!-- The link: one HTTP hop, two arrows -->
+  <path d="M30 30 C38 26 34 40 40 38" fill="none" stroke="#e2e8f0" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="4 3"/>
+  <circle cx="34" cy="28" r="2.4" fill="#e2e8f0"/>
+</svg>

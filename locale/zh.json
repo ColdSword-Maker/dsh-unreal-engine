@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Unreal Engine 5.8 桥接",
+    "description": "通过 UE 5.8 编辑器内置的 MCP 服务器列出并调用编辑器工具，让 Agent 直接读取日志、Actor、资产与蓝图，无需离开编辑器。"
+  }
+}

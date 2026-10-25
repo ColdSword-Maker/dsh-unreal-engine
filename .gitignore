@@ -1,0 +1,29 @@
+# Build output — produced by `node scripts/build.mjs` / `pnpm build`.
+# dist/ is COMMITTED on purpose: the package entry is dist/index.js, so a fresh clone must be
+# installable with `plugin_manager install_bundle` without building first. Rebuild and commit it
+# whenever src/ changes.
+# dist/
+
+# Dependencies (this plugin intentionally has none, but keep the rule).
+node_modules/
+
+# Unreal Engine project output, if a fixture project lives beside or inside the repo.
+Saved/
+Intermediate/
+Binaries/
+DerivedDataCache/
+*.sln
+*.suo
+
+# Local profile paths and machine-specific config.
+.dsh/
+*.local.json
+.env
+.env.*
+
+# Editor / OS noise.
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
